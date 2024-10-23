@@ -10,8 +10,8 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { GuestGuard } from './guards/guest.guard';
 import { IRoleType } from './interfaces';
 import { ProfileComponent } from './pages/profile/profile.component';
-import { GamesComponent } from './pages/games/games.component';
-import { OrdersComponent } from './pages/orders/orders.component';
+import { ProductsComponent } from "./pages/products/products.component";
+import { CategoriesComponent } from "./pages/categories/categories.component";
 
 export const routes: Routes = [
   {
@@ -83,30 +83,28 @@ export const routes: Routes = [
         }
       },
       {
-        path: 'games',
-        component: GamesComponent,
-        data: { 
+        path: "products",
+        component: ProductsComponent,
+        data: {
           authorities: [
-            IRoleType.admin, 
+            IRoleType.admin,
             IRoleType.superAdmin,
-            IRoleType.user,
-          ],
-          name: 'games',
-          showInSidebar: true
-        }
+            IRoleType.user],
+          name: "products",
+          showInSidebar: true,
+        },
       },
       {
-        path: 'orders',
-        component: OrdersComponent,
-        data: { 
+        path: "categories",
+        component: CategoriesComponent,
+        data: {
           authorities: [
-            IRoleType.admin, 
+            IRoleType.admin,
             IRoleType.superAdmin,
-            IRoleType.user,
-          ],
-          name: 'orders',
-          showInSidebar: true
-        }
+            IRoleType.user],
+          name: "categories",
+          showInSidebar: true,
+        },
       }
     ],
   },

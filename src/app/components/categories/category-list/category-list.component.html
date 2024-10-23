@@ -6,21 +6,15 @@
       <th scope="col">#</th>
       <th scope="col">Name</th>
       <th scope="col">Description</th>
-      <th scope="col">Price</th>
-      <th scope="col">Stock Quantity</th>
-      <th scope="col">Category</th>
-      <th scope="col" appRoleGuard [superAdminOnly]="true">Options</th>
+      <th scope="col"  appRoleGuard [superAdminOnly]="true">Options</th>
     </tr>
   </thead>
   <tbody>
-    @for (item of products; track $index) {
+    @for (item of categories; track $index) {
       <tr>
         <th scope="row">{{item.id}}</th>
         <td>{{item.name}}</td>
         <td>{{item.description}}</td>
-        <td>{{item.price}}</td>
-        <td>{{item.stockQuantity}}</td>
-        <td>{{item.category.name}}</td>
         <td  appRoleGuard [superAdminOnly]="true">
           <button 
             (click)="callModalAction.emit(item);" 
@@ -40,7 +34,7 @@
       <tr>
         <td colspan="4">
           <div class="d-flex justify-content-center align-items-center w-100">
-            <p class="mb-0">There are not products yet</p>
+            <p class="mb-0">There are not categories yet</p>
           </div>
         </td>
       </tr>

@@ -74,6 +74,10 @@ export class AuthService {
     return roles.some(role => this.hasRole(role));
   }
 
+  public isSuperAdmin(): boolean {
+    return this.user.authorities ?  this.user?.authorities.some(authority => authority.authority == IRoleType.superAdmin) : false;
+  }
+
   public getPermittedRoutes(routes: any[]): any[] {
     let permittedRoutes: any[] = [];
     for (const route of routes) {
